@@ -13,7 +13,7 @@ export class GeminiService {
   }
 
   async generateResponse(userMessage: string, history: { role: string; parts: { text: string }[] }[]) {
-    const model = "gemini-3.1-pro-preview";
+    const model = "gemini-1.5-flash";
     
     const systemInstruction = `
       Você é o Assistente Acadêmico oficial do curso de Pintura da Escola de Belas Artes (EBA) da UFRJ.
