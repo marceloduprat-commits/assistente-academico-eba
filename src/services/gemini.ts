@@ -5,7 +5,7 @@ export class GeminiService {
   private ai: GoogleGenAI;
 
   constructor() {
-    const apiKey = process.env.GEMINI_API_KEY;
+    const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
     if (!apiKey) {
       throw new Error("GEMINI_API_KEY is not defined");
     }
@@ -13,7 +13,7 @@ export class GeminiService {
   }
 
   async generateResponse(userMessage: string, history: { role: string; parts: { text: string }[] }[]) {
-    const model = "gemini-1.5-flash";
+    const model = "gemini-1.5-pro";
     
     const systemInstruction = `
       Você é o Assistente Acadêmico oficial do curso de Pintura da Escola de Belas Artes (EBA) da UFRJ.
